@@ -1,3 +1,5 @@
+from Encryption import Encryption
+
 codes = {
     "A": ".-",
     "B": "-...",
@@ -45,17 +47,17 @@ codes = {
 }
 
 
-def convert(text):
-    morse_code = ""
-    for i in text.upper():
-        if i in codes:
-            morse_code += codes[i] + " "
-        else:
-            morse_code += i
-    return morse_code.strip()
+# def convert(text):
+#     morse_code = ""
+#     for i in text.upper():
+#         if i in codes:
+#             morse_code += codes[i] + " "
+#         else:
+#             morse_code += i
+#     return morse_code.strip()
 
 
 if __name__ == "__main__":
     plainText = input("Enter text to convert:- ")
-    convertedText = convert(plainText)
+    convertedText = Encryption(plainText)
     print(f"Morse Code for {plainText}\n {convertedText}")
