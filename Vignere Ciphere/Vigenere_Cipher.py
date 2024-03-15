@@ -1,3 +1,5 @@
+from Vignere_Table import PrintVignereTable
+
 def Encryption(plainText, keyStream):
     result = ""
     for i in range(len(plainText)):
@@ -10,7 +12,6 @@ def Encryption(plainText, keyStream):
         else:
             result += plainText[i]
     return result
-
 
 def Decryption(plainText, keyStream):
     result = ""
@@ -27,13 +28,14 @@ def Decryption(plainText, keyStream):
 
 
 if __name__ == "__main__":
-    option = int(input("Enter the option 1 for Encryption or 2 for Decryption: "))
-    plaintext = input("Enter the text you want to encrypt or decrypt: ")
-    key = input("Enter the lock stream: ")
-    if option == 1:
-        ciphertext = Encryption(plaintext, key)
-    elif option == 2:
-        ciphertext = Decryption(plaintext, key)
-    else:
-        print("Invalid Option")
-    print("Cipher Text is :", ciphertext)
+    PrintVignereTable()
+    # option = int(input("Enter the option 1 for Encryption or 2 for Decryption: "))
+    # plaintext = input("Enter the text you want to encrypt or decrypt: ")
+    # key = input("Enter the lock stream: ")
+    # if option == 1:
+    #     ciphertext = Encryption(plaintext, key)
+    # elif option == 2:
+    #     ciphertext = Decryption(plaintext, key)
+    # else:
+    #     print("Invalid Option")
+    # print("Cipher Text is :", ciphertext)
