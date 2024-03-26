@@ -67,7 +67,10 @@ def add_round_key(state):  # fourth step
 
 def Encryption(array):
     substitted_array = sub_bytes(array)
+    print(substitted_array,"substitted_array")
     shifted_array = shift_rows(substitted_array)
+    print(shifted_array,"shifted_array")
     mixed_column = mix_column(shifted_array)
+    print(mixed_column,"mixed_column")
     cipher = add_round_key(mixed_column)
     return cipher
