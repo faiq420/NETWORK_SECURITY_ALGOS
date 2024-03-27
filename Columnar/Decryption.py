@@ -31,10 +31,14 @@ def Decryption(encryptedText,key):
     sortedSet= sorted(setOfUniqueChars)
 
     #fetch from array a/c to index
+    orderOfExtraction=[]
     for i in sortedSet:
-        filtered=list(filter(lambda x: x["element"] == i, sorted_list))
-        for j in filtered:
-            indexed=array[j["index"]]
-            for k in indexed:
-                plainText+=k
-    print(plainText.replace("&",""))
+        filtered = list(filter(lambda x: x["element"] == i, sorted_list))
+        orderOfExtraction.append(filtered[0]["index"])
+    extracted_rows = [array[i] for i in orderOfExtraction]
+
+    column_wise_elements = [[row[j] for row in extracted_rows] for j in range(len(extracted_rows[0]))]
+    for i in column_wise_elements:
+        for j in i:
+            plainText+=j
+    return (plainText.replace("&",""))
