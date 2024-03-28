@@ -12,7 +12,7 @@ def Decryption(encryptedText,key):
     # Fill the array with encrypted text by the key
     index = 0
     for char in sorted(key):
-        filtered = [elem for elem in sorted_list if elem["element"] == char]
+        filtered = list(filter(lambda x: x["element"] == char, sorted_list))
         for elem in filtered:
             for k in range(rows):
                 if index < len(processedText):
