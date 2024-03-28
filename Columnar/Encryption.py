@@ -32,18 +32,10 @@ def Encryption(plainText, key):
     sortedSet = sorted(setOfUniqueChars)
 
     # fetch from array a/c to index
-    print(array)
     for i in sortedSet:
         filtered = list(filter(lambda x: x["element"] == i, sorted_list))
-        # print(filtered)
         for j in filtered:
-            print(j)
             for k,row in enumerate(array):
-                print(row[j["index"]],j["index"])
                 excryptedText+=(row[j["index"]])
-        #     indexed = array[j["index"]]
-        #     for k in indexed:
-        #         # print(k)
-        #         excryptedText += k
-
+        
     return excryptedText
