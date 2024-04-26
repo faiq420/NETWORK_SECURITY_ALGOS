@@ -7,6 +7,6 @@ if __name__ == "__main__":
         ["5C", "33", "98", "B0"],
         ["F0", "2D", "AD", "C5"],
     ]
-    result=Encryption(array)
     print(f"Plain text: \n {array}")
+    result=Encryption(array)
     print(f"Ciphered text: \n {result}")
